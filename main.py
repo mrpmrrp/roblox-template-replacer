@@ -1,7 +1,13 @@
 
 from PIL import Image
-from os import listdir, remove
+from os import mkdir, listdir, remove, path
 from time import sleep
+
+Directories = ['input', 'output']
+for directory in Directories:
+    if path.isdir(directory) != True:
+        mkdir(directory)
+        print(f'Created {directory}')
 
 def ClearOutputFolder():
     path = 'output'
